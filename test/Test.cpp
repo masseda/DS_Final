@@ -31,32 +31,17 @@ EXPECT_EQ("3/2",fraction->Afficher());
 
 }
 
-TEST(DS, opPlusMoins)
-{
 
-	string firstlevel ("com");
-	string secondlevel ("cplusplus");
-	string scheme ("http://");
-	string hostname;
-
-
-	hostname = "www." + secondlevel + '.' + firstlevel;
-
-
-	EXPECT_EQ("www.cplusplus.com", hostname);
+TEST(stringAfficher, addition) {
+	Fraction *fraction = new Fraction(1,2);
+	fraction->addition(1);
+	EXPECT_EQ("3/2",fraction->Afficher());
 }
 
-TEST(DS, opInf){
-	string a = "expenses";
-	string b = "money";
-	EXPECT_EQ(a < b,1);
+TEST(stringAfficher, additionfraction) {
+	Fraction *fraction = new Fraction(1,2);
+	Fraction *fraction1 = new Fraction(4,2);
+	fraction->addition(*fraction1);
+	EXPECT_EQ("10/4",fraction->Afficher());
 }
 
-/*
-TEST(DS, polymorphisme){
-	A *a = new A;
-	A *b = new B;
-	EXPECT_EQ("?", a->Says());
-	EXPECT_EQ("Woof", b->Says());
-	}
-	*/
