@@ -5,24 +5,31 @@
  *      Author: masse
  */
 
-//#include "A.hpp"
-//#include "B.hpp"
 #include <iostream>
 #include <string>
+#include <vector>
+
+
+
+
+
 #include <fstream>
 #include <sstream>
 #include <stdio.h>
 #include <stdlib.h>
 #include <iomanip>
 #include <gtest/gtest.h>
+#include "../src/Fraction.hpp"
 
 using namespace std;
-/*TEST(Class, type_id){
-	A a;
-	B b;
-	EXPECT_EQ("1B", string(typeid(b)), name());
+
+
+
+TEST(stringAfficher, testLineContent) {
+Fraction *fraction = new Fraction(3,2);
+EXPECT_EQ("3/2",fraction->Afficher());
+
 }
-*/
 
 TEST(DS, opPlusMoins)
 {
