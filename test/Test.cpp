@@ -45,3 +45,17 @@ TEST(stringAfficher, additionfraction) {
 	EXPECT_EQ("10/4",fraction->Afficher());
 }
 
+TEST(stringAfficher, operateur)
+{
+	Fraction *fraction = new Fraction(1,2);
+	fraction->operator +(1);
+	EXPECT_EQ("3/2",fraction->Afficher());
+}
+
+TEST(stringAfficher, operateurfraction)
+{
+	Fraction *fraction = new Fraction(1,2);
+	Fraction *fraction1 = new Fraction(4,2);
+	fraction->operator +(*fraction1);
+	EXPECT_EQ("10/4",fraction->Afficher());
+}
