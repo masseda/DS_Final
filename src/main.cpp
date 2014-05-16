@@ -6,11 +6,24 @@
 // Description : Hello World in C++, Ansi-style
 //============================================================================
 
-#include <iostream>
-
 using namespace std;
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <sstream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <iomanip>
+#include <gtest/gtest.h>
 
-int main() {
-	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
-	return 0;
+
+
+int main(int argc, char **argv)
+{
+
+	//cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
+	//return 0;
+
+	::testing::InitGoogleTest(&argc,argv);
+	return RUN_ALL_TESTS();
 }
