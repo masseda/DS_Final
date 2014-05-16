@@ -29,9 +29,13 @@ public:
 
 
 	string Afficher();
+
 	void addition(int add);
 	void addition(const Fraction&);
+
 	string toString(const int nb);
+	void operator+(const Fraction& maFraction);
+	void operator+(int operateur);
 
 private :
 	int _numerateur;

@@ -49,12 +49,24 @@ string Fraction::Afficher()
 
 	return element;
 }
-void Fraction::addition(int add)
+void Fraction::addition(const int add)
 {
+	int nFraction = add;
+	int dFraction = 1;
+	int nResult = this->_numerateur*this->_denominateur+nFraction*dFraction;
+	int dResult = this->_denominateur*dFraction;
+	setNumerateur(nResult);
+	setDenominateur(dResult);
 
 }
-void Fraction::addition(const Fraction&)
+void Fraction::addition(const Fraction& maFraction)
 {
+	int n_fraction = maFraction.getNumerateur();
+	int d_fraction = maFraction.getDenominateur();
+	int n_result = this->_numerateur*this->_denominateur+n_fraction*d_fraction;
+	int d_result = this->_denominateur*d_fraction;
+	setNumerateur(n_result);
+	setDenominateur(d_result);
 
 }
 string Fraction::toString(const int nb)
@@ -62,4 +74,13 @@ string Fraction::toString(const int nb)
    std::ostringstream oss;
    oss << nb;
    return oss.str();
+}
+
+void Fraction::operator+(const Fraction& ma_fraction)
+{
+	addition(ma_fraction);
+}
+void Fraction::operator+(int operateur)
+{
+	addition(operateur);
 }
